@@ -17,8 +17,36 @@ np.random.seed(0)
 
 clustering = KMeans(n_clusters=10, random_state=0).fit(X)
 
-# for pred_label, act_label in it.izip(clustering.labels_, y):
-#     print pred_label-act_label
+mapped = zip(clustering.labels_, y)
+
+lst = [[(-1, -1)], [(-1, -1)], [(-1, -1)], [(-1, -1)], [(-1, -1)],
+       [(-1, -1)], [(-1, -1)], [(-1, -1)], [(-1, -1)], [(-1, -1)], ]
+
+for i in mapped:
+    if i[0] == 0:
+        lst[0].append(i)
+    elif i[0] == 1:
+        lst[1].append(i)
+    elif i[0] == 2:
+        lst[2].append(i)
+    elif i[0] == 3:
+        lst[3].append(i)
+    elif i[0] == 4:
+        lst[4].append(i)
+    elif i[0] == 5:
+        lst[5].append(i)
+    elif i[0] == 6:
+        lst[6].append(i)
+    elif i[0] == 7:
+        lst[7].append(i)
+    elif i[0] == 8:
+        lst[8].append(i)
+    elif i[0] == 9:
+        lst[9].append(i)
+    else:
+        lst[10].append(i)
+
+print lst[9][2:]
 
 data = pd.DataFrame(clustering.labels_)
 
